@@ -1,4 +1,4 @@
-package LoopsFlows;
+package loopsFlows;
 
 public class ChainedLoops {
     public static void main(String[] args) {
