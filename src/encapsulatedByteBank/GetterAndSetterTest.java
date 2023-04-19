@@ -2,8 +2,7 @@ package encapsulatedByteBank;
 
 public class GetterAndSetterTest {
     public static void main(String[] args) {
-        Account account = new Account();
-        account.setNumber(1337);
+        Account account = new Account(1337, 24226);
         System.out.println("Account number: " + account.getNumber());
 
         Client juan = new Client();

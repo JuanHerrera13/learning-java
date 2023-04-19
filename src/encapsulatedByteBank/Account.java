@@ -5,6 +5,19 @@ public class Account {
     private int agency;
     private int number;
     private Client holder = new Client();
+    private static int accountsTotal;
+
+    public Account() {
+
+    }
+
+    public Account(int agency, int number) {
+        accountsTotal++;
+        System.out.println("The number of accounts created is " + accountsTotal);
+        this.agency = agency;
+        this.number = number;
+        System.out.println("Creating account with number " + number);
+    }
 
     public void deposit(double value) {
         this.balance += value;
@@ -25,7 +38,7 @@ public class Account {
             destiny.deposit(value);
             return true;
         }
-            return false;
+        return false;
     }
 
     public double getBalance() {
@@ -37,6 +50,10 @@ public class Account {
     }
 
     public void setNumber(int number) {
+        if (number <= 0) {
+            System.out.println("Value can't be less than or equal to zero");
+            return;
+        }
         this.number = number;
     }
 
@@ -45,6 +62,10 @@ public class Account {
     }
 
     public void setAgency(int agency) {
+        if (agency <= 0) {
+            System.out.println("Value can't be less than or equal to zero");
+            return;
+        }
         this.agency = agency;
     }
 
@@ -54,5 +75,9 @@ public class Account {
 
     public void setHolder(Client holder) {
         this.holder = holder;
+    }
+
+    public static int getAccountsTotal() {
+        return Account.accountsTotal;
     }
 }
